@@ -1,5 +1,6 @@
 ﻿using System;
 
+
 namespace MoodAnalyzerProblem
 {
     public class MoodAnalyzer
@@ -8,7 +9,11 @@ namespace MoodAnalyzerProblem
         private const string SAD_MESSAGE = "Iam in Sad Mood";
         private const string HAPPY_MESSAGE = "Iam in Any Mood";
         //variables
-        private string message;
+        private readonly string message;
+        public MoodAnalyzer()
+        {
+
+        }
         public MoodAnalyzer(string message)
         {
             this.message = message;
@@ -25,15 +30,23 @@ namespace MoodAnalyzerProblem
             try
             {
                 if (message == null || message == string.Empty)
-                    throw new MoodAnalysisException();
+                    throw new MoodAnalysisException(message);
                 if (message == SAD_MESSAGE)
                     return "SAD";
                 if (message == HAPPY_MESSAGE)
                     return "HAPPY";
             }
-            catch (MoodAnalysisException)
+            catch (MoodAnalysisException ex)
             {
-                return "HAPPY";
+                Console.WriteLine(ex.Message);
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e.Message);
+            }
+            finally
+            {
+                Console.WriteLine("Done");
             }
             return null;
         }
