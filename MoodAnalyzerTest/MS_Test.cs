@@ -204,6 +204,7 @@ namespace MoodAnalyzerTest
                 Console.WriteLine("Done Test case: WhenGivenClassNameWrong_ThrowsMoodAnalysisException");
             }
         }
+        
         /// <summary>
         /// passing wrong constructor parameter
         /// </summary>
@@ -238,6 +239,15 @@ namespace MoodAnalyzerTest
                 Console.WriteLine("Done Test case: WhenGivenClassNameWrong_ThrowsMoodAnalysisException");
             }
         }
+        [TestMethod]
+        public void GivenHappyMessage_UsingReflections_ReturnsHappyMood()
+        {
+            MoodAnalyserFactory moodAnalyserFactory = new MoodAnalyserFactory();
+            string result = moodAnalyserFactory.InvokeMethod();
+            string expected = "HAPPY";
+            Assert.AreEqual(result, expected);
+        }
+
     }
 
 }

@@ -28,6 +28,7 @@ namespace MoodAnalyzerProblem
         {
             this.className = "MoodAnalyzerProblem.MoodAnalyzer";
         }
+        //variable
         Type moodAnalyserType;
         object moodAnalyserObject;
         Assembly assembly = Assembly.GetExecutingAssembly();
@@ -50,9 +51,9 @@ namespace MoodAnalyzerProblem
                 {
                     //creata an object with Constructor.
                     moodAnalyserObject = Activator.CreateInstance(moodAnalyserType);
-                    ConstructorInfo constructor = GetConstructor();
-                    var conObj = CreateConstructor(this.className, constructor);
-                    Console.WriteLine("Constructor object :- " + conObj);
+                    //ConstructorInfo constructor = GetConstructor();
+                    //var conObj = CreateConstructor(this.className, constructor);
+                    //Console.WriteLine("Constructor object :- " + conObj);
                 }
                 return moodAnalyserObject;
             }
@@ -117,6 +118,17 @@ namespace MoodAnalyzerProblem
             }
             //getting constuctors from the class.
             return null;
+        }
+        public string InvokeMethod()
+        {
+            //creating an object of class by CreatObjectAtRuntime() method.
+            object moodAnalysisObj = CreateObjectAtRuntime();
+            //Getting the methods present in the class
+            MethodInfo methodMoodCheck = moodAnalyserType.GetMethod("MoodCheck");
+            //invoking method using predefined Invoke method with object and passing string parameter.
+            //return object type.
+            var outputMessage = methodMoodCheck.Invoke(moodAnalysisObj, null);
+            return outputMessage.ToString();
         }
     }
 }

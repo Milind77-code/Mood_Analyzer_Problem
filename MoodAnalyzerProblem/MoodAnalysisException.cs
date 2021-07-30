@@ -28,7 +28,7 @@ namespace MoodAnalyzerProblem
             }
             if (errors == Errors.METHOD_ERROR)
             {
-                Console.WriteLine(errors + " :- No such method error");
+                Console.WriteLine(errors + ":- No such method error.");
             }
         }
     }

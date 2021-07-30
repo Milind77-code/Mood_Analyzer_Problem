@@ -38,7 +38,7 @@ namespace MoodAnalyzerProblem
                     throw new MoodAnalysisException(MoodAnalysisException.Errors.EMPTY);
                 if (message.Contains("sad"))
                     return "SAD";
-                if (message.Contains("happy"))
+                if (message.Contains("any"))
                     return "HAPPY";
             }
             catch (MoodAnalysisException ex)
