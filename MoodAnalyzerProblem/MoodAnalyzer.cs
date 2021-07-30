@@ -25,13 +25,13 @@ namespace MoodAnalyzerProblem
             try
             {
                 if (message == null || message == string.Empty)
-                    throw new Exception();
+                    throw new MoodAnalysisException();
                 if (message == SAD_MESSAGE)
                     return "SAD";
                 if (message == HAPPY_MESSAGE)
                     return "HAPPY";
             }
-            catch (Exception)
+            catch (MoodAnalysisException)
             {
                 return "HAPPY";
             }
