@@ -1,6 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Text;
 
 namespace MoodAnalyzerProblem
 {
@@ -18,15 +16,25 @@ namespace MoodAnalyzerProblem
         /// <summary>
         /// Check for mood if sad return sad message and
         /// if happy return happy message.
+        /// if mood is null throw an exception invalid mood.
         /// </summary>
         /// <param name="message">string passed by user</param>
         /// <returns></returns>
         public string MoodCheck()
         {
-            if (message == SAD_MESSAGE)
-                return "SAD";
-            if (message == HAPPY_MESSAGE)
+            try
+            {
+                if (message == null || message == string.Empty)
+                    throw new Exception();
+                if (message == SAD_MESSAGE)
+                    return "SAD";
+                if (message == HAPPY_MESSAGE)
+                    return "HAPPY";
+            }
+            catch (Exception)
+            {
                 return "HAPPY";
+            }
             return null;
         }
     }

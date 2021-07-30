@@ -10,9 +10,9 @@ namespace MoodAnalyzerProblem
         /// <param name="args"></param>
         static void Main(string[] args)
         {
-            Console.WriteLine("Mood Analyser program using Exceptions");
-
-            MoodAnalyzer moodAnalyserr = new MoodAnalyzer("Iam in Sad Mood");
+            Console.WriteLine("<--------Mood Analyser program using Exceptions-------->");
+            Console.WriteLine("--------------------------------------------------------");
+            MoodAnalyzer moodAnalyserr = new MoodAnalyzer(" ");
             Console.WriteLine(moodAnalyserr.MoodCheck());
         }
     }

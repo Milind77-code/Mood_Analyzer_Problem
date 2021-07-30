@@ -36,5 +36,20 @@ namespace MoodAnalyzerTest
             //Assert
             Assert.AreEqual(expected, result);
         }
+        /// <summary>
+        /// check for invalid mood, returns "HAPPY" message.
+        /// </summary>
+        [TestMethod]
+        public void WhenGivenInvalidMood_ReturnsHappyMessage()
+        {
+            //Arrange
+            string message = "";
+            string expected = "HAPPY";
+            //Act
+            MoodAnalyzer mood = new MoodAnalyzer(message);
+            string result = mood.MoodCheck();
+            //Assert
+            Assert.AreEqual(expected, result);
+        }
     }
 }
